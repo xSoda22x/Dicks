@@ -8,3 +8,4 @@ C:\Users\tyler\Documents\GitHub\Dicks\Kayn\Kayn\bin\Release\SharpDX.Direct3D9.dl
 C:\Users\tyler\Documents\GitHub\Dicks\Kayn\Kayn\bin\Release\Newtonsoft.Json.dll
 C:\Users\tyler\Documents\GitHub\Dicks\Kayn\Kayn\obj\Release\Kayne.exe
 C:\Users\tyler\Documents\GitHub\Dicks\Kayn\Kayn\obj\Release\Kayne.pdb
+C:\Users\tyler\Documents\GitHub\Dicks\Kayn\Kayn\obj\Release\Kayne.csprojResolveAssemblyReference.cache

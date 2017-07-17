@@ -49,8 +49,11 @@ namespace Kayn
 
             FarmMenu = Dicks.AddSubMenu("Farm", "SPells");
             FarmMenu.Add("W", new CheckBox("W"));
-            FarmMenu.Add("R", new CheckBox("R"));
+      
 
+            KSMenu = Dicks.AddSubMenu("KS", "R");
+
+            KSMenu.Add("R", new CheckBox("R"));
 
             DrawMenu = Dicks.AddSubMenu("Draw", "Fat Dick Draw");
 
@@ -69,7 +72,38 @@ namespace Kayn
             {
                 Combo();
             }
+             if (KSMenu["R"].Cast<CheckBox>().CurrentValue)
+                ks();
+
         }
+
+
+        private static void ks()
+        {
+            var target = TargetSelector.GetTarget(R.Range, DamageType.Physical);
+            if (KSMenu["R"].Cast<CheckBox>().CurrentValue)
+            {
+                if (target != null && target.Health < RDPS(target))
+                {
+                    if (!target.IsInRange(_Player, R.Range) && R.IsReady())
+                    {
+                        return;
+                    }
+                    {
+                        R.Cast(target);
+                    }
+                }
+            }
+        }
+
+        public static float RDPS(Obj_AI_Base target)
+        {
+            if (R.IsReady())
+                return Player.Instance.CalculateDamageOnUnit(target, DamageType.Physical, new[] { 150f, 250f, 350f }[R.Level] + 1f * ObjectManager.Player.FlatPhysicalDamageMod + 0.15f * target.Health);
+            else
+                return 0f;
+        }
+
 
         private static void LaneClear()
         {
