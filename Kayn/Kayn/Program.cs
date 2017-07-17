@@ -42,7 +42,7 @@ namespace Kayn
             W = new Spell.Skillshot(SpellSlot.W, 750, EloBuddy.SDK.Enumerations.SkillShotType.Linear);
             R = new Spell.Targeted(SpellSlot.R, 425);
 
-            Dicks = MainMenu.AddMenu("Dicks", "Fat Cocks");
+            Dicks = MainMenu.AddMenu("Kayn", "BestSkarnerNA");
 
             ComboMenu = Dicks.AddSubMenu("Combo", "Combo");
 
@@ -58,7 +58,7 @@ namespace Kayn
 
             KSMenu.Add("R", new CheckBox("R"));
 
-            DrawMenu = Dicks.AddSubMenu("Draw", "Fat Dick Draw");
+            DrawMenu = Dicks.AddSubMenu("Draw", "Colorful Drawings");
 
             DrawMenu.Add("Q", new CheckBox("Q"));
             DrawMenu.Add("W", new CheckBox("W"));
