@@ -47,7 +47,7 @@ namespace Kayn
             ComboMenu.Add("W", new CheckBox("W"));
             ComboMenu.Add("R", new CheckBox("R"));
 
-            FarmMenu = Dicks.AddSubMenu("Farm", "Spells");
+            FarmMenu = Dicks.AddSubMenu("Farm", "SPells");
             FarmMenu.Add("W", new CheckBox("W"));
             FarmMenu.Add("R", new CheckBox("R"));
 
@@ -72,7 +72,7 @@ namespace Kayn
         {
             var minions =
                 EntityManager.MinionsAndMonsters
-                    .GetLaneMinions(EntityManager.UnitTeam.Enemy, EloBuddy.Player.Instance.Position, W.Range)
+                    .GetLaneMinions(EntityManager.UnitTeam.Enemy, EloBuddy.Player.Instance.Position, Q.Range)
                     .Where(m => !m.IsDead && m.IsValid && !m.IsInvulnerable);
 
             {
@@ -82,11 +82,11 @@ namespace Kayn
                     {
                         if (FarmMenu["Q"].Cast<CheckBox>().CurrentValue)
                         {
-                            Q.Cast();
+                            Q.Cast(m);
                         }
                         if (FarmMenu["W"].Cast<CheckBox>().CurrentValue)
                         {
-                            W.Cast();
+                            W.Cast(m);
                         }
                     }
                 }
