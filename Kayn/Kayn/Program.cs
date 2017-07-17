@@ -47,7 +47,7 @@ namespace Kayn
             ComboMenu.Add("W", new CheckBox("W"));
             ComboMenu.Add("R", new CheckBox("R"));
 
-            FarmMenu = Dicks.AddSubMenu("Draw", "Fat Dick Draw");
+            FarmMenu = Dicks.AddSubMenu("Farm", "Spells");
             FarmMenu.Add("W", new CheckBox("W"));
             FarmMenu.Add("R", new CheckBox("R"));
 
