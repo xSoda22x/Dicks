@@ -32,6 +32,9 @@ namespace Kayn
         private static void LoadingKayn(EventArgs args)
         {
 
+
+            Chat.Print("Very Basic Kayn", Color.Purple);
+            Chat.Print("BestSkarnerNA", Color.Turquoise);
             Game.OnTick += Game_OnTick;
             Drawing.OnDraw += Drawing_OnDraw;
 
@@ -45,7 +48,7 @@ namespace Kayn
 
             ComboMenu.Add("Q", new CheckBox("Q"));
             ComboMenu.Add("W", new CheckBox("W"));
-            ComboMenu.Add("R", new CheckBox("R"));
+            ComboMenu.Add("R", new CheckBox("R", false));
 
             FarmMenu = Dicks.AddSubMenu("Farm", "SPells");
             FarmMenu.Add("W", new CheckBox("W"));
@@ -130,11 +133,11 @@ namespace Kayn
             var target = TargetSelector.GetTarget(Q.Range, DamageType.Physical);
             if (DrawMenu["Q"].Cast<CheckBox>().CurrentValue)
             {
-                Circle.Draw(Color.Aqua, Q.Range, Kayn);
+                Circle.Draw(Color.Purple, Q.Range, Kayn);
             }
             if (DrawMenu["W"].Cast<CheckBox>().CurrentValue)
             {
-                Circle.Draw(Color.Aqua, W.Range, Kayn);
+                Circle.Draw(Color.Purple, W.Range, Kayn);
 
             }
         }
