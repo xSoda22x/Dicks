@@ -1,0 +1,10 @@
+C:\Users\tyler\Documents\GitHub\Dicks\Kayn\Kayn\bin\Release\Kayne.exe.config
+C:\Users\tyler\Documents\GitHub\Dicks\Kayn\Kayn\bin\Release\Kayne.exe
+C:\Users\tyler\Documents\GitHub\Dicks\Kayn\Kayn\bin\Release\Kayne.pdb
+C:\Users\tyler\Documents\GitHub\Dicks\Kayn\Kayn\bin\Release\EloBuddy.dll
+C:\Users\tyler\Documents\GitHub\Dicks\Kayn\Kayn\bin\Release\EloBuddy.SDK.dll
+C:\Users\tyler\Documents\GitHub\Dicks\Kayn\Kayn\bin\Release\SharpDX.dll
+C:\Users\tyler\Documents\GitHub\Dicks\Kayn\Kayn\bin\Release\SharpDX.Direct3D9.dll
+C:\Users\tyler\Documents\GitHub\Dicks\Kayn\Kayn\bin\Release\Newtonsoft.Json.dll
+C:\Users\tyler\Documents\GitHub\Dicks\Kayn\Kayn\obj\Release\Kayne.exe
+C:\Users\tyler\Documents\GitHub\Dicks\Kayn\Kayn\obj\Release\Kayne.pdb

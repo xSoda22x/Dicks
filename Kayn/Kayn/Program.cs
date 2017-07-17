@@ -73,29 +73,23 @@ namespace Kayn
 
         private static void LaneClear()
         {
-            var minions =
-                EntityManager.MinionsAndMonsters
-                    .GetLaneMinions(EntityManager.UnitTeam.Enemy, EloBuddy.Player.Instance.Position, Q.Range)
-                    .Where(m => !m.IsDead && m.IsValid && !m.IsInvulnerable);
+            var target = EntityManager.MinionsAndMonsters.EnemyMinions.FirstOrDefault(a => !a.IsDead && W.IsInRange(a));
 
+            if (target == null)
             {
-                foreach (var m in minions)
-                {
-                    if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LaneClear))
-                    {
-                        if (FarmMenu["Q"].Cast<CheckBox>().CurrentValue)
-                        {
-                            Q.Cast(m);
-                        }
-                        if (FarmMenu["W"].Cast<CheckBox>().CurrentValue)
-                        {
-                            W.Cast(m);
-                        }
-                    }
-                }
+                return;
             }
 
+            if (FarmMenu["Q"].Cast<CheckBox>().CurrentValue && Q.IsReady() && target.IsValidTarget(Q.Range))
+            {
+                Q.Cast();
+            }
+            if (FarmMenu["W"].Cast<CheckBox>().CurrentValue && W.IsReady() && target.IsValidTarget(W.Range))
+            {
+                W.Cast();
+            }
         }
+
 
         private static void Drawing_OnDraw(EventArgs args)
         {
