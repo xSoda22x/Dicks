@@ -61,10 +61,13 @@ namespace Kayn
 
         private static void Game_OnTick(EventArgs args)
         {
+            if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LaneClear))
+            {
+                LaneClear();
+            }
             if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo))
             {
                 Combo();
-                LaneClear();
             }
         }
 
