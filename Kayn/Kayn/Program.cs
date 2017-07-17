@@ -8,6 +8,7 @@ using System.Linq;
 using SharpDX;
 using EloBuddy.SDK.Rendering;
 using System.Drawing;
+using Color = SharpDX.Color;
 
 namespace Kayn
 {
