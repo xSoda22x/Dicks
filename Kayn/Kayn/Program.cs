@@ -28,6 +28,8 @@ namespace Kayn
 
         static void Main(string[] args)
         {
+            Chat.Print("<font color='#add8e6'>Kayn Basic</font> Loaded.");
+            Chat.Print("By <font color='#ff0000'>BestSkarnerNA</font>");
             Loading.OnLoadingComplete += LoadingKayn;
         }
 
@@ -97,7 +99,7 @@ namespace Kayn
             }
         }
 
-        public static float RDPS(Obj_AI_Base target)
+        public static float RDPS(Obj_AI_Base target)  // made by Nao o shurima
         {
             if (R.IsReady())
                 return Player.Instance.CalculateDamageOnUnit(target, DamageType.Physical, new[] { 150f, 250f, 350f }[R.Level] + 1f * ObjectManager.Player.FlatPhysicalDamageMod + 0.15f * target.Health);
