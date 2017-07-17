@@ -15,7 +15,7 @@ namespace Kayn
         public static Spell.Skillshot Q;
         public static Spell.Skillshot W;
         public static Spell.Targeted R;
-        public static Menu Dicks, ComboMenu, DrawMenu, KSMenu;
+        public static Menu Dicks, ComboMenu, DrawMenu, KSMenu, FarmMenu;
         private static AIHeroClient Kayn => Player.Instance;
 
         public static AIHeroClient _Player
@@ -47,6 +47,11 @@ namespace Kayn
             ComboMenu.Add("W", new CheckBox("W"));
             ComboMenu.Add("R", new CheckBox("R"));
 
+            FarmMenu = Dicks.AddSubMenu("Draw", "Fat Dick Draw");
+            FarmMenu.Add("W", new CheckBox("W"));
+            FarmMenu.Add("R", new CheckBox("R"));
+
+
             DrawMenu = Dicks.AddSubMenu("Draw", "Fat Dick Draw");
 
             DrawMenu.Add("Q", new CheckBox("Q"));
@@ -59,7 +64,34 @@ namespace Kayn
             if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo))
             {
                 Combo();
+                LaneClear();
             }
+        }
+
+        private static void LaneClear()
+        {
+            var minions =
+                EntityManager.MinionsAndMonsters
+                    .GetLaneMinions(EntityManager.UnitTeam.Enemy, EloBuddy.Player.Instance.Position, W.Range)
+                    .Where(m => !m.IsDead && m.IsValid && !m.IsInvulnerable);
+
+            {
+                foreach (var m in minions)
+                {
+                    if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LaneClear))
+                    {
+                        if (FarmMenu["Q"].Cast<CheckBox>().CurrentValue)
+                        {
+                            Q.Cast();
+                        }
+                        if (FarmMenu["W"].Cast<CheckBox>().CurrentValue)
+                        {
+                            W.Cast();
+                        }
+                    }
+                }
+            }
+
         }
 
         private static void Drawing_OnDraw(EventArgs args)
@@ -104,7 +136,6 @@ namespace Kayn
 
                     }
                 }
-
             }
         }
     }
