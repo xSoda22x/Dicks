@@ -33,10 +33,6 @@ namespace Kayn
 
         private static void LoadingKayn(EventArgs args)
         {
-
-
-            Chat.Print("Very Basic Kayn", Color.Purple);
-            Chat.Print("BestSkarnerNA", Color.Turquoise);
             Game.OnTick += Game_OnTick;
             Drawing.OnDraw += Drawing_OnDraw;
 
